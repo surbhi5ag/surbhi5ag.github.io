@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Scrollytelling Demo</title>
+   	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500" rel="stylesheet">
+   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <style>
+
+		p {
+			font-family: 'Open Sans', sans-serif;
+			color:#353536;
+			font-weight:300;
+		}
+
+		svg {
+			width:100%;
+			height:600px;
+			padding-left:5%;
+			padding-right:50px;
+		}
+
+		h1 {
+			font-size:60px;
+			font-weight:200;
+			line-height:1.3;
+		}
+
+		#firstvisualdiv{
+          position: -webkit-sticky;
+          position: sticky;
+          top: -1px;
+          border-color: black;
+          background-color: gray;
+          padding: 100px;
+          transition: opacity 0.8s;
+         -webkit-transition: opacity 0.8s;
+
+    	}
+
+    #secondvisualdiv {
+          position: -webkit-sticky;
+          position: sticky;
+          top: -1px;
+          padding: 100px;
+          transition: opacity 0.8s;
+         -webkit-transition: opacity 0.8s;
+        }
+
+
+   .img{
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    opacity: 0;
+    transition: opacity 1.2s;
+    -webkit-transition: opacity 1.2s;
+
+   }
+
+   .text1opacity, .text2opacity {
+        font-size:30px;
+        fill:blue;
+        opacity:0;
+        transition: opacity 0.8s;
+         -webkit-transition: opacity 0.8s;
+        }
+
+    .text3opacity {
+        font-size:30px;
+        fill:blue;
+        opacity:0;
+        transition: opacity 0.8s;
+        color: blue;
+         -webkit-transition: opacity 0.8s;
+        }
+
+	.active {
+        	opacity:1;
+    	}
+
+
+    .deactive {
+            opacity:0;
+        }
+
+	</style>
+
+
+</head>
+<body>
+  <main role="main" class="container" >
+     <div class="row">
+     	<div class="col-6">
+     		<br><br>
+     		<h1>Decoding Intention to Migrate Drivers</h1>
+     		<hr>
+     	</div>
+     </div>
+     <div class="row">
+     	<div class="col-4">
+
+      <p>Which socioeconomic, demographic, and environmental stressors correlate most strongly with an intention to migrate, both externally and internally, in Central America’s Northern Triangle?</p>
+
+      <br><br>
+
+     	<p id="text1"> We intend to understand regional differences between factors associated with a person’s intention to migrate.  </p>
+
+     	<br><br>
+
+     	<p id="text2">This question is motivated by a desire to survey the range of reasons for why a person might intend to migrate, and to understand whether there are common factors unique to regions that correlate with these intentions. </p>
+     	<br><br>
+
+     	<p id="text3">For example, intentions to migrate might correlate most strongly with an environmental disaster in one country, while they might correlate strongly with perceived income opportunities in another country.</p>
+     	<br><br>
+     	</div>
+
+      <div class="col-8">
+     		<div id="firstvisualdiv">
+               <p style="font-size: 20px;"> Introduction </p>
+               <p class="text1opacity">In risk and disaster governance, little attention is given to vulnerability interconnections. Vulnerability is multicausal, calling attention to how horizontal institutional sectors and vertical political scales should cooperate to decrease long-term risk exposure (Lavell and Maskrey, 2014).</p>
+               <p class="text2opacity">Short spikes in migration, the most pressing contemporary concern, are mainly caused by sudden crises (Clemens, 2021). These, in turn, are heightened by the chronic and cumulative nature of risk exposure.</p>
+               <p class="text3opacity">Unpacking underlying vulnerability interactions and their geographic specificity may provide concrete ways for policymakers and practitioners to move forward.</p>
+     		</div>
+     	</div>
+
+     	<div class="col-4">
+     	<p id="text4"> </p>
+
+        <br><br>
+        <p> </p>
+
+     	<br><br>
+        <p id="text5"></p>
+
+        <br><br>
+        <p> </p>
+
+        <br><br>
+     	</div>
+     	<div class="col-8">
+     		<div id="secondvisualdiv">
+                <img class="img" src="https://cdn.americanprogress.org/content/uploads/2019/06/20110056/MigrationReport.jpg">
+     		</div>
+
+        <div class="col-24">
+          <div id="secondvisualdiv">
+                  <img class="img" src="https://cdn.cnn.com/cnnnext/dam/assets/211013153128-01-iquique-migrant-protes-0925-super-169.jpg">
+          </div>
+
+          <div class="col-24">
+            <div id="secondvisualdiv">
+                    <img class="img" src="https://fews.net/sites/default/files/styles/large/public/SV_LHZ_2018.png?itok=2imYVAWm">
+            </div>
+
+            <div class="col-24">
+              <div id="secondvisualdiv">
+                      <img class="img" src="https://immigrationforum.org/wp-content/uploads/2019/07/PushPull1-1.png">
+              </div>
+
+     	</div>
+     </div>
+  </main><!-- /.container -->
+</body>
+
+<script type="text/javascript">
+    var controller = new ScrollMagic.Controller();
+
+    	new ScrollMagic.Scene({triggerElement: "#text1"})
+        	.setClassToggle(".text1opacity", "active")
+        	.addTo(controller);
+
+    	new ScrollMagic.Scene({triggerElement: "#text2"})
+        	.setClassToggle(".text2opacity", "active")
+        	.addTo(controller);
+
+		new ScrollMagic.Scene({triggerElement: "#text3"})
+        	.setClassToggle(".text3opacity", "active")
+        	.addTo(controller);
+
+        new ScrollMagic.Scene({triggerElement: "#text4"})
+            .setClassToggle("#firstvisualdiv", "deactive")
+            .addTo(controller);
+
+        new ScrollMagic.Scene({triggerElement: "#text5"})
+            .setClassToggle(".img", "active")
+            .addTo(controller);
+
+</script>
+</body>
+</html>
